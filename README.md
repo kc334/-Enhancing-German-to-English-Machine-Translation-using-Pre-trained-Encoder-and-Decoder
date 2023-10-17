@@ -7,11 +7,10 @@ This project is adapted from homework 2(prefixtune) of Anoop Sarkar. Below is th
 git clone https://github.com/anoopsarkar/nlp-class-hw.git
 
 
-##Approach
-
+## Approach
 This project utilizes encoder-decoder transformers for the machine translation task. Specifically, we will employ the Huggingface's Encoder-Decoder Models library and initialize the model with a pre-trained encoder (German distilled BERT base) and a pre-trained decoder(English distilled GPT2). The library will initialize cross attention between the encoder and the decoder with random weights. Subsequently, fine-tuning will be performed on the model using the German-to-English dataset.
 
-##dataset
+## dataset
 The dataset used for this project was IWSLT 2014 German-to-English dataset (https://huggingface.co/datasets/bbaaaa/iwslt14-de-en). Hugging Face library was used to load the dataset.
 
 ## Installation

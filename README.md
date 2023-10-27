@@ -4,7 +4,8 @@
 
 ## Reference
 This project is adapted from homework 2(prefixtune) of Anoop Sarkar. Below is the link to it
-git clone https://github.com/anoopsarkar/nlp-class-hw.git
+
+    git clone https://github.com/anoopsarkar/nlp-class-hw.git
 
 
 ## Approach
@@ -15,16 +16,26 @@ The dataset used for this project was IWSLT 2014 German-to-English dataset (http
 
 ## Installation
 
+This project is developed on Linux
+
 Make sure you setup your virtual environment:
 
     python3.10 -m venv venv
     source venv/bin/activate
     pip install -U -r requirements.txt
 
+## Train
 
-## Create output.zip
+The final model is too big to be uploaded. To train a model
 
-To create the `output.zip` file for upload to Coursys do:
+    python3 answer/prefixtune.py -f
+
+About 7 epoches reach the optimum 
+
+
+## Inference on the training, validation and testing dataset
+
+To inference on the training, validation and testing dataset
 
     python3 zipout.py
 
@@ -32,19 +43,10 @@ For more options:
 
     python3 zipout.py -h
 
-## Create source.zip
 
-To create the `source.zip` file for upload to Coursys do:
+## Check your accuracy on the dataset
 
-    python3 zipsrc.py
-
-For more options:
-
-    python3 zipsrc.py -h
-
-## Check your accuracy
-
-To check your accuracy on the dev set:
+To check your accuracy on the dataset:
 
     python3 check.py
 
@@ -55,4 +57,15 @@ For more options:
 In particular use the log file to check your output evaluation:
 
     python3 check.py -l log
+
+## Inference and validate on custom dataset
+
+To inference on the custome dataset:
+
+    python3 answer/prefixtune.py -i data/input/custom.txt > output.txt
+
+
+To check your accuracy on the custom dataset (I assume you provide custom.out for comparsion):
+
+    python3 bleu.py -t data/reference/custom.out -o output.txt
 
